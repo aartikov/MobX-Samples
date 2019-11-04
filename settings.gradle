@@ -1,0 +1,2 @@
+include ':fruitcounter'
+rootProject.name='MobX-Samples'

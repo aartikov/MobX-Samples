@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fruit Counter</string>
+    <string name="apple_count_template">Apples: %d</string>
+    <string name="banana_count_template">Bananas: %d</string>
+    <string name="fruit_count_template">Fruits: %d</string>
+    <string name="reset">Reset</string>
+</resources>
