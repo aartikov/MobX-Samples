@@ -1,4 +1,4 @@
-package me.aartikov.fruitcounter
+package me.aartikov.fruitcounter.presentation.utils.mobx
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver

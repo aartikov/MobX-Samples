@@ -1,10 +1,13 @@
-package me.aartikov.fruitcounter
+package me.aartikov.fruitcounter.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.lifecycle.get
 import kotlinx.android.synthetic.main.activity_fruit_counter.*
+import me.aartikov.fruitcounter.R
+import me.aartikov.fruitcounter.presentation.utils.localized_string.localizedText
+import me.aartikov.fruitcounter.presentation.utils.mobx.observe
 
 class FruitCounterActivity : AppCompatActivity() {
 
@@ -13,7 +16,8 @@ class FruitCounterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fruit_counter)
-        viewModel = ViewModelProviders.of(this).get()
+
+        viewModel = ViewModelProviders.of(this, FruitCounterViewModelFactory()).get()
 
         decrementApplesButton.setOnClickListener { viewModel.onDecrementApplesClicked() }
         incrementApplesButton.setOnClickListener { viewModel.onIncrementApplesClicked() }
@@ -23,21 +27,20 @@ class FruitCounterActivity : AppCompatActivity() {
 
         // Divided to several blocks to show how to make granular updates of views
         observe {
-            appleCountTextView.text = getString(R.string.apple_count_template, viewModel.appleCount)
-            decrementApplesButton.isEnabled = viewModel.decrementApplesEnabled
-            incrementApplesButton.isEnabled = viewModel.incrementApplesEnabled
+            appleCountTextView.localizedText = viewModel.formattedAppleCount
+            decrementApplesButton.isEnabled = viewModel.decrementApplesButtonEnabled
+            incrementApplesButton.isEnabled = viewModel.incrementApplesButtonEnabled
         }
 
         observe {
-            bananaCountTextView.text = getString(R.string.banana_count_template, viewModel.bananaCount)
-            bananaCountTextView.text = getString(R.string.banana_count_template, viewModel.bananaCount)
-            decrementBananasButton.isEnabled = viewModel.decrementBananasEnabled
-            incrementBananasButton.isEnabled = viewModel.incrementBananasEnabled
+            bananaCountTextView.localizedText = viewModel.formattedBananaCount
+            decrementBananasButton.isEnabled = viewModel.decrementBananasButtonEnabled
+            incrementBananasButton.isEnabled = viewModel.incrementBananasButtonEnabled
         }
 
         observe {
-            fruitCountTextView.text = getString(R.string.fruit_count_template, viewModel.fruitCount)
-            resetButton.isEnabled = viewModel.resetEnabled
+            fruitCountTextView.localizedText = viewModel.formattedFruitCount
+            resetButton.isEnabled = viewModel.resetButtonEnabled
         }
     }
 }
