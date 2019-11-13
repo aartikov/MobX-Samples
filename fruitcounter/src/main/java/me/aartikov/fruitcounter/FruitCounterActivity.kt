@@ -20,13 +20,8 @@ class FruitCounterActivity : AppCompatActivity() {
         decrementBananasButton.setOnClickListener { viewModel.onDecrementBananasClicked() }
         incrementBananasButton.setOnClickListener { viewModel.onIncrementBananasClicked() }
         resetButton.setOnClickListener { viewModel.onResetClicked() }
-    }
-
-    override fun onStart() {
-        super.onStart()
 
         // Divided to several blocks to show how to make granular updates of views
-
         observe {
             appleCountTextView.text = getString(R.string.apple_count_template, viewModel.appleCount)
             decrementApplesButton.isEnabled = viewModel.decrementApplesEnabled
