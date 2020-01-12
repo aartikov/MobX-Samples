@@ -23,7 +23,7 @@ class FruitCounterViewModel(private val counter: FruitCounter) : ViewModel() {
     val resetButtonEnabled by computed { counter.fruitCount > 0 }
 
     private val loggingDisposable: Disposable = autorun {
-        Log.d("FRUITS", "Apples: ${counter.appleCount}, bananas: ${counter.bananaCount}, fruits: ${counter.fruitCount}")
+        Log.d("FRUIT_COUNTER", counter.toString())
     }
 
     fun onDecrementApplesClicked() {

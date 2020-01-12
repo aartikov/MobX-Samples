@@ -24,32 +24,37 @@ class FruitCounter {
     val canDecrementBananas by computed { bananaCount > 0 }
     val canIncrementBananas by computed { bananaCount < MAX_BANANA_COUNT }
 
-    fun decrementApples() = action {
+    fun decrementApples() = action("decrementApples") {
         if (canDecrementApples) {
             appleCount--
         }
     }
 
-    fun incrementApples() = action {
+    fun incrementApples() = action("incrementApples") {
         if (canIncrementApples) {
             appleCount++
         }
     }
 
-    fun decrementBananas() = action {
+    fun decrementBananas() = action("decrementBananas") {
         if (canDecrementBananas) {
             bananaCount--
         }
     }
 
-    fun incrementBananas() = action {
+    fun incrementBananas() = action("incrementBananas") {
         if (canIncrementBananas) {
             bananaCount++
         }
     }
 
-    fun reset() = action {
+    fun reset() = action("reset") {
         appleCount = 0
         bananaCount = 0
     }
+
+    override fun toString(): String {
+        return "FruitCounter(appleCount = $appleCount, bananaCount = $bananaCount, fruitCount = $fruitCount)"
+    }
+
 }

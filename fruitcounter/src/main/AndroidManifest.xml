@@ -4,6 +4,7 @@
     package="me.aartikov.fruitcounter">
 
     <application
+        android:name=".FruitCounterApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
