@@ -1,4 +1,4 @@
-#MobX for Kotlin sample
+# MobX for Kotlin sample
 
 ## About
 This is a very simple sample that demonstrates capabilities of [MobX for Kotlin](https://github.com/SamakaCD/mobx).
@@ -40,6 +40,7 @@ fun reset() = action("reset") {
 A string argument of action is a payload. It can be used for logging.
 
 ## Sample
+![screenshot](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/screenshot.png)
 
 * [FruitCounter](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/domain/FruitCounter.kt) is a domain object with observable state and actions.
 * [FruitCounterViewModel](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/presentation/FruitCounterViewModel.kt) converts domain state to UI state and calls actions of FruitCounter.
@@ -47,5 +48,3 @@ A string argument of action is a payload. It can be used for logging.
 * [FruitCounterActivity](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/presentation/FruitCounterActivity.kt) observes FruitViewModel with a helper method [observe](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/presentation/utils/mobx/Observe.kt). This method works as `autorun` but manages subscriptions automatically according to a lifecycle.
 * Action logging is configured in [FruitCounterApplication](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/FruitCounterApplication.kt).
 
-
-![screenshot](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/screenshot.png)
