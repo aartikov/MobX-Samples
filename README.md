@@ -48,3 +48,8 @@ A string argument of action is a payload. It can be used for logging.
 * [FruitCounterActivity](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/presentation/FruitCounterActivity.kt) observes FruitViewModel with a helper method [observe](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/presentation/utils/mobx/Observe.kt). This method works as `autorun` but manages subscriptions automatically according to a lifecycle.
 * Action logging is configured in [FruitCounterApplication](https://github.com/aartikov/MobX-Samples/blob/master/fruitcounter/src/main/java/me/aartikov/fruitcounter/FruitCounterApplication.kt).
 
+## Futher reading 
+* https://mobx.js.org/intro/concepts.html - original MobX documentation
+* https://github.com/mobxjs/mobx.dart - MobX for Dart/Flutter
+* https://hackernoon.com/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254 - an in-depth explanation of MobX
+
